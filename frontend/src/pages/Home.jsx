@@ -2,7 +2,7 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {MdOutlineAddBox} from "react-icons/md";
-import {Spinner} from "../../components/Spinner";
+import {Spinner} from "../components/Spinner";
 
 export const Home = () => {
   const [books, setBooks] = useState([]);
