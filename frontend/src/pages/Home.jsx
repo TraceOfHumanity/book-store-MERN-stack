@@ -1,8 +1,11 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
-import {MdOutlineAddBox} from "react-icons/md";
+import {MdOutlineAddBox, MdOutlineDelete} from "react-icons/md";
+import {AiOutlineEdit} from "react-icons/ai";
+
 import {Spinner} from "../components/Spinner";
+import {BsInfoCircle} from "react-icons/bs";
 
 export const Home = () => {
   const [books, setBooks] = useState([]);
@@ -65,24 +68,15 @@ export const Home = () => {
                   {book.publishYear}
                 </td>
                 <td className="border border-slate-700 rounded-md text-center">
-                  <div className="flex gap-x-4 justify-center">
-                    <Link
-                      to={`/books/details/${book._id}`}
-                      className="text-sky-800 mx-2"
-                    >
-                      Show
+                  <div className="flex justify-center gap-x-4">
+                    <Link to={`/books/details/${book._id}`}>
+                      <BsInfoCircle className="text-2xl text-green-800" />
                     </Link>
-                    <Link
-                      to={`/books/edit/${book._id}`}
-                      className="text-sky-800 mx-2"
-                    >
-                      Edit
+                    <Link to={`/books/edit/${book._id}`}>
+                      <AiOutlineEdit className="text-2xl text-yellow-600" />
                     </Link>
-                    <Link
-                      to={`/books/delete/${book._id}`}
-                      className="text-sky-800 mx-2"
-                    >
-                      Delete
+                    <Link to={`/books/delete/${book._id}`}>
+                      <MdOutlineDelete className="text-2xl text-red-600" />
                     </Link>
                   </div>
                 </td>
